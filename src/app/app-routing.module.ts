@@ -14,7 +14,7 @@ const routes: Routes = [
     path: 'admin',
     component: DashboardComponent,
     canActivate: [RoleGuard],
-    data: { 'requiredRole': 'admin' },
+    data: { requiredRole: 'admin' },
     children: [
       { path: '', redirectTo: 'users', pathMatch: 'full' },
       { path: 'users', component: UsersComponent },

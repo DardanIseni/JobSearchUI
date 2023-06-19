@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -44,20 +45,6 @@ export class LoginComponent implements OnInit {
         user.password === this.loginObj.password
     );
     if (isUserExist) {
-      // Store the logged-in user's name in local storage
-      localStorage.setItem('loggedInUserName', isUserExist.userName);
-
-      // Navigate to the dashboard
-      this.router.navigate(['/admin']);
-    } else {
-      alert('Wrong Credentials');
-    }
-    const ifUsersExist = this.loginObj.users.find(
-      (user: any) =>
-        user.username === this.loginObj.userName &&
-        user.password === this.loginObj.password
-    );
-    if (ifUsersExist) {
       // Store the logged-in user's name in local storage
       localStorage.setItem('loggedInUserName', isUserExist.userName);
 
